@@ -136,6 +136,47 @@ section {
   margin-bottom: 20px;
 }
 
+/* Donation section styles */
+.donation-section {
+  margin: 24px auto;
+  text-align: center;
+}
+
+/* Container with rounded border and soft coral background */
+.donation-container {
+  display: inline-block;
+  background-color: #ffb6a9; /* Soft coral */
+  border: 2px solid #ff902a; /* Coral border */
+  border-radius: 16px;
+  padding: 16px 12px;
+}
+
+/* Donation input field */
+.donation-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  margin-right: 8px;
+}
+
+/* Blue Donate button */
+.donation-btn {
+  background-color: #2E9DF7; /* Blue */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.donation-btn:hover {
+  background-color: #1976c5; /* Darker blue on hover */
+}
+
 /* 
   Media Queries for Responsive Design
   Media queries help make your website look good on different screen sizes,
@@ -194,5 +235,222 @@ section {
 
   .impact-image {
     width: 300px;
+  }
+}
+
+/* 
+  Beginner-friendly CSS for a split hero section using Flexbox.
+  - Left: light cream background, navy blue headings/buttons, mint/coral highlights
+  - Right: background image
+  - Modern sans-serif font for body text
+*/
+
+/* Use a modern sans-serif font for the whole page */
+body {
+  font-family: 'Inter', 'Lato', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdf6ee; /* Light cream background */
+  color: #222e3a;      /* Navy blue for text */
+}
+
+/* Header styles */
+header {
+  display: flex; /* Use Flexbox for header layout */
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #e6fff6; /* Mint highlight */
+  border-bottom: 2px solid #b2f2e5;
+}
+
+.logo span {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #222e3a; /* Navy blue */
+}
+
+/* About Us button */
+.about-button {
+  background: #ffe3de; /* Soft coral */
+  color: #222e3a;      /* Navy blue */
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.about-button:hover {
+  background: #ffb6a9; /* Deeper coral on hover */
+}
+
+/* Main content: split left and right using Flexbox */
+.main-content {
+  display: flex; /* Flexbox for two columns */
+  min-height: 340px;
+}
+
+/* Left side: hero message */
+.hero-section {
+  flex: 1;
+  background: #fffbea; /* Light cream */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 48px 32px;
+}
+
+/* Headline styles */
+.hero-headline {
+  font-family: 'Georgia', serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #222e3a; /* Navy blue */
+  margin-bottom: 12px;
+}
+
+/* Subtext styles */
+.hero-subtext {
+  font-family: 'Inter', 'Lato', Arial, sans-serif;
+  font-size: 1.1em;
+  color: #222e3a;
+  margin-bottom: 24px;
+}
+
+/* Donate button */
+.donate-button {
+  background: #b2f2e5; /* Mint highlight */
+  color: #222e3a;      /* Navy blue */
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.donate-button:hover {
+  background: #8bd1cb; /* Slightly deeper mint */
+}
+
+/* Right side: background image fills the height */
+.hero-right {
+  flex: 1;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+}
+
+/* Hide the image tag (if present) for background image only */
+.hero-right img {
+  display: none;
+}
+
+/* Donation section styles */
+.donation-section {
+  margin: 24px auto;
+  text-align: center;
+}
+
+/* Container with rounded border and soft coral background */
+.donation-container {
+  display: inline-block;
+  background-color: #ffe3de; /* Soft coral */
+  border: 2px solid #ffb6a9; /* Coral border */
+  border-radius: 16px;
+  padding: 16px 12px;
+}
+
+/* Donation input field */
+.donation-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  margin-right: 8px;
+  font-family: 'Inter', 'Lato', Arial, sans-serif;
+}
+
+/* Blue Donate button (navy blue) */
+.donation-btn {
+  background-color: #222e3a; /* Navy blue */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.donation-btn:hover {
+  background-color: #2E9DF7; /* Lighter blue on hover */
+}
+
+/* Headings use navy blue */
+h2 {
+  color: #222e3a;
+  font-family: 'Inter', 'Lato', Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* Highlight sections with mint or coral backgrounds */
+.story {
+  background: #e6fff6; /* Mint */
+  color: #222e3a;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+}
+
+.call-to-action {
+  background: #ffe3de; /* Coral */
+  color: #222e3a;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+}
+
+/* Responsive: stack hero sections on small screens */
+@media (max-width: 700px) {
+  .main-content {
+    flex-direction: column; /* Stack columns vertically */
+  }
+  .hero-section, .hero-right {
+    min-height: 180px;
+    padding: 24px 12px;
+  }
+  .hero-right {
+    min-height: 180px;
+    background-position: top center;
+  }
+  .hero-headline {
+    font-size: 2em;
+  }
+  .hero-subtext {
+    font-size: 1em;
+  }
+  .donate-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+  .donation-container {
+    width: 90%;
+    padding: 12px 8px;
+  }
+  .donation-input, .donation-btn {
+    width: 100%;
+    margin: 8px 0;
   }
 }

@@ -5,15 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charity Water Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add these styles to styles.css for the hero section headline and subtext */
+        .hero-headline {
+          font-family: 'Georgia', serif; /* Large, bold serif font */
+          font-size: 2.5em;
+          font-weight: bold;
+          margin-bottom: 12px;
+        }
+
+        .hero-subtext {
+          font-family: Arial, Helvetica, sans-serif; /* Smaller sans-serif font */
+          font-size: 1.1em;
+          margin-bottom: 24px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Give Water. Give a Future.</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+    <!-- Header with logo and About Us button -->
+    <header>
+        <!-- Logo (can be text or an image) -->
+        <div class="logo">
+            <!-- You can replace this text with an <img> tag for a real logo -->
+            <span>Charity:Water</span>
+        </div>
+        <!-- About Us button -->
+        <a href="#" class="about-button">About Us</a>
+    </header>
+
+    <!-- Main content area with two sections side by side -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Bold headline for the hero section -->
+            <h1 class="hero-headline">Give water. Give a future.</h1>
+            <!-- Short message below the headline -->
+            <p class="hero-subtext">Join us in bringing safe, clean water to communities in need.</p>
+            <!-- Donate button -->
+            <a href="#" class="donate-button">Donate Now</a>
+        </section>
+        <!-- Right side: Image of a smiling child holding a glass of water -->
+        <section class="hero-right">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Smiling child holding a glass of water">
+        </section>
+    </main>
 
     <!-- Story Section: This tells the story of the nonprofit -->
     <section class="story">
@@ -42,6 +77,17 @@
         <h2>Make a Difference</h2>
         <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
         <a href="#" class="donate-button">Donate Now</a>
+    </section>
+
+    <!-- Donation input section -->
+    <section class="donation-section">
+        <!-- Container for input and button -->
+        <div class="donation-container">
+            <!-- Donation input field with placeholder -->
+            <input type="text" class="donation-input" placeholder="*100% to clean water">
+            <!-- Blue Donate button -->
+            <button class="donation-btn">Donate</button>
+        </div>
     </section>
 </body>
 </html>
