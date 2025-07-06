@@ -2,7 +2,7 @@
 
 Primary Colors:
 - Yellow:     #FFC907
-- Blue:       #2E9DF7
+- Blue:       #77a8bb
 
 Secondary Colors:
 - Light Blue: #8BD1CB
@@ -58,6 +58,25 @@ section {
   /* This uses a simple linear-gradient overlay */
   background-blend-mode: darken;
   background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+}
+
+/* Make the hero-right image fill the full height between the navbar and the bottom of the page */
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: stretch;    /* Stretch image to fill the section vertically */
+  justify-content: center;
+  padding: 0;
+  background: none;        /* Remove any background image */
+  min-height: 340px;
+}
+
+/* Make the image fill the section */
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Make sure the image covers the whole area */
+  display: block;
 }
 
 /* Make the headline bold and modern */
@@ -138,43 +157,84 @@ section {
 
 /* Donation section styles */
 .donation-section {
-  margin: 24px auto;
-  text-align: center;
+  display: none; /* Hide the old donation section at the bottom */
 }
 
 /* Container with rounded border and soft coral background */
 .donation-container {
-  display: inline-block;
-  background-color: #ffb6a9; /* Soft coral */
-  border: 2px solid #ff902a; /* Coral border */
+  display: flex;              /* Use flex to center content vertically */
+  flex-direction: column;     /* Stack children vertically */
+  justify-content: center;    /* Center content vertically */
+  background-color: #fed8c1;  /* Soft coral */
+  border: 2px solid #ffac5e;  /* Coral border */
   border-radius: 16px;
-  padding: 16px 12px;
+  padding: 12px 12px;
+  margin-top: 10px;   /* Increase this value to move the donation box down */
+  margin-bottom: 0;   /* Increase this value to add space below */
+  box-shadow: none;
+  min-height: 40px;          /* Ensure enough height for centering */
 }
 
-/* Donation input field */
+/* Center the donation button vertically in the donation container */
+.donation-row {
+  display: flex;              /* Place input and button in a row */
+  align-items: flex-start;    /* Align items to the top */
+  gap: 0px;
+  margin-top: 0;
+  height: 70px;               /* Set a fixed height for the row */
+}
+
+/* Make the donation input and button the same height and have equal gap from the border */
+
+/* Donation row styles */
+.donation-row {
+  display: flex;               /* Place input and button in a row */
+  align-items: stretch;        /* Make input and button the same height */
+  gap: 0;                      /* No gap between input and button */
+  margin-top: 0;
+  height: auto;                /* Let height be determined by content */
+}
+
+/* Donation input style */
 .donation-input {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  padding: 10px 16px;          /* Padding for height and space inside */
+  border-radius: 6px 0 0 6px;  /* Rounded left corners only */
+  border: 2px solid #ff902a;   /* Same red border as container */
+  border-right: none;          /* Remove right border to join with button */
   font-size: 1em;
-  margin-right: 8px;
+  min-width: 120px;
+  background: #fff;            /* White background for input */
+  box-sizing: border-box;      /* Include border in width/height */
 }
 
-/* Blue Donate button */
-.donation-btn {
-  background-color: #2E9DF7; /* Blue */
+/* Blue Donate button style */
+.donate-button {
+  background: #2E9DF7;         /* Blue background */
   color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 22px;
+  border: 2px solid #ff902a;   /* Same red border as container */
+  border-radius: 0 6px 6px 0;  /* Rounded right corners only */
+  border-left: none;           /* Remove left border to join with input */
+  padding: 10px 20px;          /* Same vertical padding as input */
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 0;               /* No extra margin */
+  height: 80%;                /* Fill the row height */
+  box-sizing: border-box;      /* Include border in width/height */
 }
 
-.donation-btn:hover {
-  background-color: #1976c5; /* Darker blue on hover */
+.donate-button:hover {
+  background: #1976c5;
+}
+
+/* Center the donation info text and make it light and readable */
+.donation-info {
+  text-align: center;         /* Center the text */
+  color: #888;                /* Light gray color */
+  font-size: 1.2em;           /* Slightly larger for readability */
+  margin-top: 10px;           /* Space above the text */
+  font-style: italic;         /* Italic for emphasis */
 }
 
 /* 
@@ -251,7 +311,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fdf6ee; /* Light cream background */
-  color: #222e3a;      /* Navy blue for text */
+  color: #003366;      /* Navy blue for text */
 }
 
 /* Header styles */
@@ -260,20 +320,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 18px 24px;
-  background: #e6fff6; /* Mint highlight */
-  border-bottom: 2px solid #b2f2e5;
-}
-
-.logo span {
-  font-size: 1.6em;
-  font-weight: bold;
-  color: #222e3a; /* Navy blue */
+  background: #fff; /* White background for the navigation bar */
+  border-bottom: 2px solid #003366; /* Dark blue border */
 }
 
 /* About Us button */
 .about-button {
-  background: #ffe3de; /* Soft coral */
-  color: #222e3a;      /* Navy blue */
+  background: #f4900c; /* Orange background */
+  color: #fff;         /* White text */
   border: none;
   border-radius: 6px;
   padding: 10px 22px;
@@ -285,7 +339,7 @@ header {
 }
 
 .about-button:hover {
-  background: #ffb6a9; /* Deeper coral on hover */
+  background: #d97806; /* Slightly darker orange on hover */
 }
 
 /* Main content: split left and right using Flexbox */
@@ -305,152 +359,144 @@ header {
   padding: 48px 32px;
 }
 
-/* Headline styles */
+/* Make the headline and subheader even bigger for the left side */
 .hero-headline {
   font-family: 'Georgia', serif;
-  font-size: 2.5em;
+  font-size: 5em;          /* Larger headline */
   font-weight: bold;
-  color: #222e3a; /* Navy blue */
-  margin-bottom: 12px;
+  color: #222e3a;
+  margin-bottom: 0px; /* Smaller gap below the headline */
+  line-height: 1.1;
 }
 
-/* Subtext styles */
 .hero-subtext {
   font-family: 'Inter', 'Lato', Arial, sans-serif;
-  font-size: 1.1em;
+  font-size: 2.5em;           /* Larger subheader */
   color: #222e3a;
-  margin-bottom: 24px;
+  margin-bottom: 30px; /* You can adjust this value as needed */
 }
 
-/* Donate button */
-.donate-button {
-  background: #b2f2e5; /* Mint highlight */
-  color: #222e3a;      /* Navy blue */
-  border: none;
-  border-radius: 6px;
-  padding: 12px 28px;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-decoration: none;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
+/* Donation row styles */
+.donation-row {
+  display: flex;              /* Place input and button in a row */
+  align-items: flex-start;    /* Align items to the top */
+  gap: 10px;
+  margin-top: 0;
+  height: 70px;               /* Set a fixed height for the row */
 }
 
-.donate-button:hover {
-  background: #8bd1cb; /* Slightly deeper mint */
-}
-
-/* Right side: background image fills the height */
-.hero-right {
-  flex: 1;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') center center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 340px;
-}
-
-/* Hide the image tag (if present) for background image only */
-.hero-right img {
-  display: none;
-}
-
-/* Donation section styles */
-.donation-section {
-  margin: 24px auto;
-  text-align: center;
-}
-
-/* Container with rounded border and soft coral background */
-.donation-container {
-  display: inline-block;
-  background-color: #ffe3de; /* Soft coral */
-  border: 2px solid #ffb6a9; /* Coral border */
-  border-radius: 16px;
-  padding: 16px 12px;
-}
-
-/* Donation input field */
+/* Donation input style - larger for readability */
 .donation-input {
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 1em;
-  margin-right: 8px;
-  font-family: 'Inter', 'Lato', Arial, sans-serif;
+  font-size: 1.2em;
+  min-width: 120px;
+  margin-top: 10px;
 }
 
-/* Blue Donate button (navy blue) */
-.donation-btn {
-  background-color: #222e3a; /* Navy blue */
+/* Donate Now button style - larger for readability */
+.donate-button {
+  background: #77a8bb;
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 10px 22px;
-  font-size: 1em;
+  padding: 12px 30px;
+  font-size: 1.2em;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 4px; /* Move the button up slightly */
 }
 
-.donation-btn:hover {
-  background-color: #2E9DF7; /* Lighter blue on hover */
+.donate-button:hover {
+  background: #1976c5;
 }
 
-/* Headings use navy blue */
-h2 {
-  color: #222e3a;
+/* Center the donation info text and make it light and readable */
+.donation-info {
+  text-align: center;
+  color: #888;
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Floating card styles */
+.floating-card {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 260px;
+  background: #fffbea; /* Light cream */
+  border: 2px solid #b2f2e5; /* Mint border */
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(46, 157, 247, 0.10);
+  z-index: 1000;
+  padding: 16px 14px 10px 14px;
   font-family: 'Inter', 'Lato', Arial, sans-serif;
-  font-weight: bold;
 }
 
-/* Highlight sections with mint or coral backgrounds */
-.story {
+/* Card label */
+.card-label {
+  font-weight: bold;
+  color: #222e3a; /* Navy blue */
+  margin-bottom: 10px;
+  font-size: 1.15em;
+  text-align: left;
+}
+
+/* Collapsible section button */
+.card-toggle {
+  width: 100%;
   background: #e6fff6; /* Mint */
   color: #222e3a;
-  text-align: center;
-  padding: 30px 20px;
-  border-radius: 12px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
 }
 
-.call-to-action {
-  background: #ffe3de; /* Coral */
+.card-toggle:hover {
+  background: #b2f2e5; /* Deeper mint on hover */
+}
+
+/* Toggle icon */
+.toggle-icon {
+  font-size: 1.2em;
+  transition: transform 0.2s;
+}
+
+/* Collapsible content */
+.card-content {
+  display: none;
+  background: #ffe3de; /* Soft coral */
   color: #222e3a;
-  text-align: center;
-  padding: 30px 20px;
-  border-radius: 12px;
+  border-radius: 6px;
+  padding: 10px 8px;
+  margin-bottom: 8px;
+  margin-top: 2px;
 }
 
-/* Responsive: stack hero sections on small screens */
-@media (max-width: 700px) {
-  .main-content {
-    flex-direction: column; /* Stack columns vertically */
-  }
-  .hero-section, .hero-right {
-    min-height: 180px;
-    padding: 24px 12px;
-  }
-  .hero-right {
-    min-height: 180px;
-    background-position: top center;
-  }
-  .hero-headline {
-    font-size: 2em;
-  }
-  .hero-subtext {
-    font-size: 1em;
-  }
-  .donate-button {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-  .donation-container {
-    width: 90%;
-    padding: 12px 8px;
-  }
-  .donation-input, .donation-btn {
-    width: 100%;
-    margin: 8px 0;
-  }
+/* Logo image style */
+.logo-img {
+  height: 40px; /* Change this value to make the logo taller or shorter */
+  width: auto;  /* Keeps the image from stretching */
+  margin-right: 8px; /* Space between logo and brand name */
+}
+
+/* Logo text style */
+.logo span {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #222e3a;
+  margin-top: -10px; /* Make this value more negative to move it higher */
 }

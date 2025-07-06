@@ -5,29 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charity Water Landing Page</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Add these styles to styles.css for the hero section headline and subtext */
-        .hero-headline {
-          font-family: 'Georgia', serif; /* Large, bold serif font */
-          font-size: 2.5em;
-          font-weight: bold;
-          margin-bottom: 12px;
-        }
-
-        .hero-subtext {
-          font-family: Arial, Helvetica, sans-serif; /* Smaller sans-serif font */
-          font-size: 1.1em;
-          margin-bottom: 24px;
-        }
-    </style>
 </head>
 <body>
     <!-- Header with logo and About Us button -->
     <header>
-        <!-- Logo (can be text or an image) -->
+        <!-- Logo area with image and text -->
         <div class="logo">
-            <!-- You can replace this text with an <img> tag for a real logo -->
-            <span>Charity:Water</span>
+            <!-- Charity: water logo image on the left -->
+            <!-- Save the attached image as charity-water-logo.png in your project folder -->
+            <img src="img/water-can-transparent.png" alt="Charity: water logo" class="logo-img">
+            <!-- Logo text -->
+            <span>charity: water</span>
         </div>
         <!-- About Us button -->
         <a href="#" class="about-button">About Us</a>
@@ -35,49 +23,30 @@
 
     <!-- Main content area with two sections side by side -->
     <main class="main-content">
-        <!-- Hero Section -->
+        <!-- Hero Section (left side) -->
         <section class="hero-section">
-            <!-- Bold headline for the hero section -->
-            <h1 class="hero-headline">Give water. Give a future.</h1>
-            <!-- Short message below the headline -->
-            <p class="hero-subtext">Join us in bringing safe, clean water to communities in need.</p>
-            <!-- Donate button -->
-            <a href="#" class="donate-button">Donate Now</a>
+            <!-- Headline split into two lines -->
+            <h1 class="hero-headline">
+                Give water.<br>
+                Give a future.
+            </h1>
+            <!-- Subheader below the headline -->
+            <p class="hero-subtext">
+                Join us in bringing safe, clean water to communities in need.
+            </p>
+            <!-- Donation input and button in a row, now directly below subheader -->
+            <div class="donation-container">
+                <div class="donation-row">
+                    <input type="text" class="donation-input" placeholder="*100% to clean water">
+                    <button class="donate-button">Donate</button>
+                </div>
+            </div>
         </section>
         <!-- Right side: Image of a smiling child holding a glass of water -->
         <section class="hero-right">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Smiling child holding a glass of water">
+            <img src="CharityWaterHeroImage.png" alt="Smiling child holding a glass of water">
         </section>
     </main>
-
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
-
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
-
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
 
     <!-- Donation input section -->
     <section class="donation-section">
@@ -89,5 +58,50 @@
             <button class="donation-btn">Donate</button>
         </div>
     </section>
+
+    <!-- Floating interactive card on the bottom right -->
+    <div class="floating-card">
+      <div class="card-label">Be the change.</div>
+      <div class="card-section">
+        <button class="card-toggle" onclick="toggleSection('fundraiser')">
+          Fundraiser <span class="toggle-icon" id="icon-fundraiser">+</span>
+        </button>
+        <div class="card-content" id="content-fundraiser">
+          Start your own fundraiser and help bring clean water to more people!
+        </div>
+      </div>
+      <div class="card-section">
+        <button class="card-toggle" onclick="toggleSection('campaign')">
+          Campaign <span class="toggle-icon" id="icon-campaign">+</span>
+        </button>
+        <div class="card-content" id="content-campaign">
+          Join our latest campaign and make a bigger impact together.
+        </div>
+      </div>
+      <div class="card-section">
+        <button class="card-toggle" onclick="toggleSection('partnerships')">
+          Partnerships <span class="toggle-icon" id="icon-partnerships">+</span>
+        </button>
+        <div class="card-content" id="content-partnerships">
+          Partner with us to create lasting change in communities.
+        </div>
+      </div>
+    </div>
+
+    <!-- Simple JavaScript for toggling sections -->
+    <script>
+      // This function shows or hides the content when the button is clicked
+      function toggleSection(section) {
+        var content = document.getElementById('content-' + section);
+        var icon = document.getElementById('icon-' + section);
+        if (content.style.display === "block") {
+          content.style.display = "none";
+          icon.textContent = "+";
+        } else {
+          content.style.display = "block";
+          icon.textContent = "−";
+        }
+      }
+    </script>
 </body>
 </html>
